@@ -55,17 +55,17 @@ public class Messages {
         byte[] thisPeerId = ByteBuffer.allocate(4).putInt(peerId).array();
 
         int index = 0;
-        for (var headerByte : header) {
+        for (byte headerByte : header) {
             handShakeMessage[index] = headerByte;
             index += 1;
         }
 
-        for (var zeroByte : zeroBits) {
+        for (byte zeroByte : zeroBits) {
             handShakeMessage[index] = zeroByte;
             index += 1;
         }
 
-        for (var peerIdByte : thisPeerId) {
+        for (byte peerIdByte : thisPeerId) {
             handShakeMessage[index] = peerIdByte;
             index += 1;
         }
